@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pé na Areia | Seus Ingressos Estão Aqui</title>
+    <style>
+        /* Reset básico e Definições de Cores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --laranja: #FF6600;
+            --laranja-hover: #e65c00;
+            --branco: #ffffff;
+            --cinza-claro: #f4f4f4;
+            --preto-footer: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--branco);
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--branco);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--laranja);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--laranja);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--laranja);
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://scontent.xx.fbcdn.net/v/t1.15752-9/690819101_994063373077708_6347321425113445922_n.png?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_ohc=N2fp5yIV4H0Q7kNvwGZJPOJ&_nc_oc=AdpRONicxawg9IM4qYxCMKFLygf9qSifMObL66YoNWjc38hnx_jx4mg-d8eBOt6C_Uq6agnZjHgFdAWMVS1S57sM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD5QEhMVA2yedCctEMo8MHipkSm9tfZHGxN1vrjCWqYJk6Fg&oe=6A2AFA5E');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+        /* Grade de Shows */
+        .container {
+            padding: 40px 5%;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--laranja);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+
+        .shows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .btn-comprar {
+            display: block;
+            background-color: var(--laranja);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-comprar:hover {
+            background-color: var(--laranja-hover);
+        }
+
+        /* Rodapé Totalmente Preto */
+        footer {
+            background-color: var(--preto-footer);
+            color: var(--branco);
+            padding: 50px 5% 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--laranja);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--branco);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">SHOW<span>PASS</span></a>
+        <nav>
+            <a href="#">Destaques</a>
+            <a href="#">Categorias</a>
+            <a href="#">Minha Conta</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>VIVA A EXPERIÊNCIA</h1>
+        <p>Encontre os melhores shows e eventos em um só lugar.</p>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">Próximos Eventos</h2>
+        
+        <div class="shows-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=500&q=60" alt="Show de Rock">
+                <div class="card-content">
+                    <h3>Rock in Sunset</h3>
+                    <p>📅 15 de Outubro<br>📍 Arena Central</p>
+                    <a href="#" class="btn-comprar">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=60">
+                <div class="card-content">
+                    <h3>Electro Night</h3>
+                    <p>📅 22 de Outubro<br>📍 Club 88</p>
+                    <a href="#" class="btn-comprar">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=60" alt="Show de MPB">
+                <div class="card-content">
+                    <h3>Vozes do Brasil</h3>
+                    <p>📅 05 de Novembro<br>📍 Teatro Municipal</p>
+                    <a href="#" class="btn-comprar">GARANTIR INGRESSO</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>SHOWPASS</h4>
+                <p>A maior plataforma de ingressos do país. Transformando momentos em memórias.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Venda seu evento</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li>📧 contato@showpass.com.br</li>
+                    <li>📞 (11) 4002-8922</li>
+                    <li>📍 São Paulo, SP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ShowPass Ingressos LTDA. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
